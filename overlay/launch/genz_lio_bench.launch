@@ -1,0 +1,20 @@
+<launch>
+  <!--
+    Benchmark launch: GenZ-LIO's own odometry.launch, unchanged, with its RViz
+    replaced by the benchmark view rviz/genz_lio_bench.rviz (the map drawn as
+    Points, which software-rendered RViz keeps up with).
+
+      roslaunch genz_lio genz_lio_bench.launch config:=bunker.yaml
+  -->
+  <arg name="config" default="default/velodyne.yaml"
+       doc="Complete YAML: package config/ relative path or absolute path"/>
+  <arg name="rviz" default="true"/>
+
+  <include file="$(find genz_lio)/launch/odometry.launch">
+    <arg name="config" value="$(arg config)"/>
+    <arg name="rviz" value="false"/>
+  </include>
+
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" launch-prefix="nice"
+        args="-d $(find genz_lio)/rviz/genz_lio_bench.rviz"/>
+</launch>
