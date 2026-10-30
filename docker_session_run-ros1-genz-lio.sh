@@ -28,8 +28,8 @@ CLOUD_TOPIC="${CLOUD_TOPIC:-/cloud_registered}"
 # GenZ-LIO parameter file (LiDAR/IMU topics, LiDAR type, extrinsics, noise):
 # a file on the host, or a path relative to GenZ-LIO's config/ folder (its
 # default/ and experiments/ files, and the benchmark's bunker.yaml).
-# Default: GenZ-LIO's own launch default, default/velodyne.yaml.
-CONFIG_FILE="${CONFIG_FILE:-default/velodyne.yaml}"
+# Default: the Bunker DVI dataset (Livox Mid-360), the benchmark's bunker.yaml.
+CONFIG_FILE="${CONFIG_FILE:-bunker.yaml}"
 
 # RViz on by default — the live view of how GenZ-LIO tracks the dataset.
 USE_RVIZ="${USE_RVIZ:-1}"
@@ -47,8 +47,7 @@ usage() {
   echo
   echo "Environment variables:"
   echo "  CONFIG_FILE  - GenZ-LIO parameter file: a host *.yaml, or a path relative to"
-  echo "                 GenZ-LIO's config/ folder  (default: default/velodyne.yaml;"
-  echo "                 bunker.yaml for the Bunker DVI dataset)"
+  echo "                 GenZ-LIO's config/ folder  (default: bunker.yaml)"
   echo "  ODOM_TOPIC   - GenZ-LIO odometry output topic   (default: /Odometry)"
   echo "  CLOUD_TOPIC  - GenZ-LIO odom-frame scan topic   (default: /cloud_registered)"
   echo "  USE_RVIZ     - 1/0, launch RViz live view       (default: 1)"
