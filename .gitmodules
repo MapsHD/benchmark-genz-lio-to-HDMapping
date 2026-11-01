@@ -1,0 +1,9 @@
+[submodule "src/genz-lio"]
+	path = src/genz-lio
+	url = https://github.com/cocel-postech/genz-lio.git
+[submodule "src/livox_ros_driver"]
+	path = src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "src/genz-lio-to-hdmapping/src/3rdparty/LASzip"]
+	path = src/genz-lio-to-hdmapping/src/3rdparty/LASzip
+	url = https://github.com/LASzip/LASzip.git
